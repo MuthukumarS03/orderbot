@@ -21,7 +21,8 @@
     "express": "^4.12.2",
     "kraken-js": "^1.0.3",
     "localizr": "^0.1.6",
-    "requirejs": "^2.1.20"
+    "requirejs": "^2.1.20",
+    "underscore": "~1.7.0"
   },
   "devDependencies": {
     "grunt": "^0.4.5",
