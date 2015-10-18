@@ -1,7 +1,7 @@
 /**
  * Created by msudalaiyandi
  */
-
+'use strict';
 
 module.exports = function () {
 
@@ -11,5 +11,5 @@ module.exports = function () {
         req.model = req.model || {};
 
         next();
-    }
+    };
 };
