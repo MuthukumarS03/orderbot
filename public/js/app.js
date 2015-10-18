@@ -1,19 +1,18 @@
 'use strict';
 
 
-requirejs.config({
-    paths: {}
-});
+require(['config'], function (config) {
 
+    require([
+        'jquery',
+        'router',
+        'lib/shim/compat',
+        'lib/bb-errors',
+        'lib/auto-submit'
+    ], function ($, Router) {
 
-require([/* Dependencies */], function () {
+        var router = new Router();
 
-    var app = {
-        initialize: function () {
-            // Your code here
-        }
-    };
-
-    app.initialize();
+    });
 
 });
