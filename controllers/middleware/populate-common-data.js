@@ -10,6 +10,10 @@ module.exports = function () {
         //Initialize req.model
         req.model = req.model || {};
 
+        //Add Context path to the model
+        req.model.contextPath = req.app.kraken.get('requestURI');
+
+
         next();
     };
 };
