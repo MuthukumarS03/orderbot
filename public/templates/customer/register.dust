@@ -1,0 +1,67 @@
+{>"layouts/master" /}
+
+{<title}
+    Customer - Register
+{/title}
+{<link}
+    <link rel="stylesheet" href="{contextPath}/css/register.css">
+{/link}
+
+{<body}
+
+    <div id="register">
+        <h2 class="heading"> Customer Register </h2>
+        <div class="line"> </div>
+
+        <div class="section">
+            <div class="label"> First Name </div>
+            <div class = "detail">
+                <input id="firstName" class="textInput" type="text" placeholder="First Name"/>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="label"> Last Name </div>
+            <div class = "detail">
+                <input id="lastName" class="textInput" type="text" placeholder="Last Name"/>
+            </div>
+        </div>
+        <div class="section">
+            <div class="label"> Email </div>
+            <div class = "detail">
+                <input id="email" class="textInput" type="text" placeholder="Email"/>
+            </div>
+        </div>
+        <div class="section">
+            <div class="label"> Address </div>
+            <div class = "detail">
+                <input id="address" class="textInput" type="text" placeholder="Address"/>
+            </div>
+        </div>
+        <div class="section">
+            <div class="label"> Phone </div>
+            <div class = "detail">
+                <input id="phone" class="textInput" type="text" placeholder="Phone"/>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="label"></div>
+            <div class = "detail">
+                <a href="" class="btn primary continue">Continue</a>
+            </div>
+
+        </div>
+
+
+
+    </div>
+
+{/body}
+
+
+
+
+
+
+
