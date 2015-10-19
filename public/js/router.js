@@ -4,8 +4,9 @@ define([
 	'backbone',
 	'nougat',
 	'constants',
-	'view/global'
-], function ($, _, Backbone, nougat, constants, GlobalPageView) {
+	'view/global',
+    'routes/customer'
+], function ($, _, Backbone, nougat, constants, GlobalPageView, CustomerRoute) {
 
 	'use strict';
 
@@ -18,7 +19,7 @@ define([
 		 * Register all the interesting URIs that will fire off generic or specific functionality
 		 */
 		routes: {
-			'settings(/*subroute)': 'invokeSettings'
+			'customer(/*subroute)': 'invokeCustomer'
 			/* No generic route to avoid downloading/initializing JS files that do not exist */
 		},
 
@@ -56,6 +57,12 @@ define([
 				$(window).scrollTop();
 
 				Backbone.history.navigate(fragment, { trigger: true, replace: true });
+			}
+		},
+
+        invokeCustomer: function () {
+            if (!this.CustomerRoute) {
+                this.CustomerRoute = new CustomerRoute('customer', {createTrailingSlashRoutes: true});
 			}
 		}
 	});

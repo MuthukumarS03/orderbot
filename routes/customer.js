@@ -9,5 +9,10 @@ var customerController = require('../controllers/customer'),
 
 module.exports =  function(router) {
 
-    router.get('/', customerController.create, responses.renderHTMLandJSON);
+    router.get('/register', customerController.create, responses.renderHTMLandJSON);
+
+    router.get('/*', function (req, res) {
+        var requestURI = req.app.kraken.get('requestURI');
+        res.redirect(requestURI+ '/customer/register');
+    });
 };
