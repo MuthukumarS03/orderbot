@@ -52,7 +52,7 @@
             <div class="label"> Expiration </div>
 
             <div class="detail">
-                <select class="selectDropdown">
+                <select id="ccExpMonth" class="selectDropdown">
                     <option value="1">01</option>
                     <option value="2">02</option>
                     <option value="3">03</option>
@@ -67,7 +67,7 @@
                     <option value="12">12</option>
                 </select>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <select class="selectDropdown">
+                <select id="ccExpYear" class="selectDropdown">
                     <option value="2015">2015</option>
                     <option value="2016">2016</option>
                     <option value="2017">2017</option>
@@ -75,6 +75,18 @@
                     <option value="2019">2019</option>
                     <option value="2020">2020</option>
                 </select>
+            </div>
+        </div>
+        <div class="section">
+            <div class="label"> CVV </div>
+            <div class = "detail">
+                <input id="cvv" class="textInput" type="text" placeholder="CVV" maxlength=3/>
+            </div>
+        </div>
+        <div class="section">
+            <div class="label"> Name on Card </div>
+            <div class = "detail">
+                <input id="ccName" class="textInput" type="text" placeholder="Name on Credit Card"/>
             </div>
         </div>
         <div class="section">
