@@ -12,6 +12,8 @@
         <h2 class="heading"> Customer Register </h2>
         <div class="line"> </div>
 
+        <div id="feedback" class="hide"></div>
+
         <div class="section">
             <div class="label"> First Name </div>
             <div class = "detail">
@@ -86,19 +88,16 @@
         <div class="section">
             <div class="label"> Name on Card </div>
             <div class = "detail">
-                <input id="ccName" class="textInput" type="text" placeholder="Name on Credit Card"/>
+                <input id="nameOnCard" class="textInput" type="text" placeholder="Name on Credit Card"/>
             </div>
         </div>
         <div class="section">
-            <div class="label"> Billing Address </div>
-            <div class = "detail">
-                <input id="billingAddress" class="textInput" type="text" placeholder="Billing Address"/>
-            </div>
+             <div class="required">All fields are required. Please enter all the information.</div>
         </div>
         <div class="section">
             <div class="label"></div>
             <div class = "detail">
-                <a href="" class="btn primary continue">Submit</a>
+                <a href="#" id="submit" class="btn primary continue">Submit</a>
             </div>
 
         </div>

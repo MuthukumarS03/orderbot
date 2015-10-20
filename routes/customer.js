@@ -9,7 +9,9 @@ var customerController = require('../controllers/customer'),
 
 module.exports =  function(router) {
 
-    router.get('/register', customerController.create, responses.renderHTMLandJSON);
+    router.get('/register', customerController.handleView, responses.renderHTMLandJSON);
+
+    router.post('/create', customerController.create, responses.renderJSON);
 
     router.get('/*', function (req, res) {
         var requestURI = req.app.kraken.get('requestURI');
