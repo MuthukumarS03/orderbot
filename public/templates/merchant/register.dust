@@ -1,0 +1,117 @@
+{>"layouts/master" /}
+
+{<title}
+    Merchant - Register
+{/title}
+{<link}
+    <link rel="stylesheet" href="{contextPath}/css/register.css">
+{/link}
+
+{<body}
+    <div id="register">
+        <h2 class="heading"> Merchant Register </h2>
+        <div class="line"> </div>
+
+        <div id="feedback" class="hide"></div>
+
+        <div class="section">
+            <div class="label">Business Name</div>
+            <div class = "detail">
+                <input id="businessName" class="textInput" type="text" placeholder="Business Name"/>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="label"> First Name </div>
+            <div class = "detail">
+                <input id="firstName" class="textInput" type="text" placeholder="First Name"/>
+            </div>
+        </div>
+        <div class="section">
+            <div class="label"> Last Name </div>
+            <div class = "detail">
+                <input id="lastName" class="textInput" type="text" placeholder="Last Name"/>
+            </div>
+        </div>
+        <div class="section">
+            <div class="label"> Email </div>
+            <div class = "detail">
+                <input id="email" class="textInput" type="text" placeholder="Email"/>
+            </div>
+        </div>
+        <div class="section">
+            <div class="label"> Address </div>
+            <div class = "detail">
+                <input id="street" class="textInput" type="text" placeholder="Street Name and Apt"/>
+                <input id="city" class="textInput addressField" type="text" placeholder="City"/>
+                <div>
+                <select id="state" class="selectDropdown addressField">
+                    {#data.states}
+                        <option value="{.}">{.}</option>
+                    {/data.states}
+                </select>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <input id="zipcode" class="textInput addressField" type="text" placeholder="Zip Code" maxlength="5"/>
+                </div>
+            </div>
+        </div>
+        <div class="section">
+            <div class="label"> Phone </div>
+            <div class = "detail">
+                <input id="phone" class="textInput" type="text" placeholder="Phone" maxlength="10"/>
+            </div>
+        </div>
+        <div class="section">
+            <div class="label"> Date of Birth </div>
+            <div class = "detail">
+                <input id="dob" class="textInput" type="text" placeholder="mm/dd/yyyy"/>
+            </div>
+        </div>
+        <div class="section">
+            <div class="label"> SSN </div>
+            <div class = "detail">
+                <input id="ssn" class="textInput" type="text" placeholder="Social Security Number" maxlength="9"/>
+            </div>
+        </div>
+        <div class="section">
+            <div class="label"> Tax Id </div>
+            <div class = "detail">
+                <input id="taxId" class="textInput" type="text" placeholder="Tax ID" maxlength="9"/>
+            </div>
+        </div>
+        <div class="section">
+            <div class="label"> Bank Name </div>
+            <div class = "detail">
+                <input id="bankName" class="textInput" type="text" placeholder="Bank Name"/>
+            </div>
+        </div>
+        <div class="section">
+            <div class="label"> Bank Account Number </div>
+            <div class = "detail">
+                <input id="bankAcctNo" class="textInput" type="text" placeholder="Bank Account Number"/>
+            </div>
+        </div>
+        <div class="section">
+            <div class="label"> Bank Routing Number </div>
+            <div class = "detail">
+                <input id="bankRoutingNo" class="textInput" type="text" placeholder="Bank Routing Number"/>
+            </div>
+        </div>
+        <div class="section">
+             <div class="required">All fields are required. Please enter all the information.</div>
+        </div>
+        <div class="section">
+            <div class="label"></div>
+            <div class = "detail">
+                <a href="#" id="submit" class="btn primary continue">Submit</a>
+            </div>
+        </div>
+    </div>
+{/body}
+
+
+
+
+
+
+

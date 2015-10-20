@@ -5,8 +5,9 @@ define([
 	'nougat',
 	'constants',
 	'view/global',
-    'routes/customer'
-], function ($, _, Backbone, nougat, constants, GlobalPageView, CustomerRoute) {
+    'routes/customer',
+    'routes/merchant'
+], function ($, _, Backbone, nougat, constants, GlobalPageView, CustomerRoute, MerchantRoute) {
 
 	'use strict';
 
@@ -19,7 +20,8 @@ define([
 		 * Register all the interesting URIs that will fire off generic or specific functionality
 		 */
 		routes: {
-			'customer(/*subroute)': 'invokeCustomer'
+			'customer(/*subroute)': 'invokeCustomer',
+            'merchant(/*subroute)': 'invokeMerchant'
 			/* No generic route to avoid downloading/initializing JS files that do not exist */
 		},
 
@@ -64,7 +66,13 @@ define([
             if (!this.CustomerRoute) {
                 this.CustomerRoute = new CustomerRoute('customer', {createTrailingSlashRoutes: true});
 			}
-		}
+		},
+        invokeMerchant: function () {
+            if (!this.MerchantRoute) {
+                this.MerchantRoute = new MerchantRoute('merchant', {createTrailingSlashRoutes: true});
+            }
+        },
+
 	});
 
 });

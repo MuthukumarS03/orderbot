@@ -13,6 +13,8 @@ module.exports = function () {
         //Add Context path to the model
         req.model.contextPath = req.app.kraken.get('requestURI');
 
+        //populate template base path
+        req.model.templateBasePath = req.app.kraken.get('requestURI') + '/templates/US/en/%s.js';
 
         next();
     };

@@ -8,18 +8,19 @@ define([
     'jquery',
     'underscore',
     'BaseView',
-    'model/customer',
+    'model/merchant',
     'backboneValidation'
-], function($, _, BaseView, customerModel) {
+], function($, _, BaseView, merchantModel) {
 
     var RegisterView = BaseView.extend({
 
         el: '#register',
 
-        model: customerModel,
+        model: merchantModel,
 
         events: {
             'click #submit': 'submit',
+            'focusout #businessName': 'validateErrorField',
             'focusout #firstName': 'validateErrorField',
             'focusout #lastName': 'validateErrorField',
             'focusout #email': 'validateErrorField',
@@ -27,11 +28,12 @@ define([
             'focusout #city': 'validateErrorField',
             'focusout #zipcode': 'validateErrorField',
             'focusout #phone': 'validateErrorField',
-            'focusout #ccNo': 'validateErrorField',
-            'focusout #cvv': 'validateErrorField',
-            'focusout #nameOnCard': 'validateErrorField',
-            'focusout #deviceMac': 'validateErrorField',
-            'focusout #itemId': 'validateErrorField'
+            'focusout #dob': 'validateErrorField',
+            'focusout #ssn': 'validateErrorField',
+            'focusout #taxId': 'validateErrorField',
+            'focusout #bankName': 'validateErrorField',
+            'focusout #bankAcctNo': 'validateErrorField',
+            'focusout #bankRoutingNo': 'validateErrorField'
 
         },
 
@@ -49,6 +51,7 @@ define([
 
         loadModel: function () {
             this.model.set({
+                businessName: this.$('#businessName').val(),
                 firstName: this.$('#firstName').val(),
                 lastName: this.$('#lastName').val(),
                 email: this.$('#email').val(),
@@ -57,13 +60,13 @@ define([
                 state: this.$('#state').val(),
                 zipcode: this.$('#zipcode').val(),
                 phone: this.$('#phone').val(),
-                ccNo: this.$('#ccNo').val(),
-                ccExpMonth: this.$('#ccExpMonth').val(),
-                ccExpYear: this.$('#ccExpYear').val(),
-                cvv: this.$('#cvv').val(),
-                nameOnCard: this.$('#nameOnCard').val(),
-                deviceMac: this.$('#deviceMac').val(),
-                itemId: this.$('#itemId').val()
+
+                dob: this.$('#dob').val(),
+                ssn: this.$('#ssn').val(),
+                taxId: this.$('#taxId').val(),
+                bankName: this.$('#bankName').val(),
+                bankAcctNo: this.$('#bankAcctNo').val(),
+                bankRoutingNo: this.$('#bankRoutingNo').val()
             });
         },
 

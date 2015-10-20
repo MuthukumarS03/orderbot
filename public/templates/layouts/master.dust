@@ -8,7 +8,9 @@
         {+link /}
     
     </head>
-    <body data-token="{_csrf}" {?fsoToken}data-fso-token="{fsoToken}"{/fsoToken}{~s}>
+    <body data-token="{_csrf}" {?fsoToken}data-fso-token="{fsoToken}"{/fsoToken}{~s}
+          data-template-path={templateBasePath}
+    >
 
         {>"layouts/header" /}
 
