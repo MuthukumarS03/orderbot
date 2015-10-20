@@ -5,5 +5,16 @@
 {/title}
 
 {<body}
-    {@pre type="content" key="greeting"/}
+
+    <div id="main">
+        <div id="robo">
+            <img src="{contextPath}/img/robot_400x400.png"/>
+        </div>
+        <div id="signup">
+            <div id="customerSignUp"><a href="customer/register" class="btn primary">Customer Sign up </a> </div>
+            <div id="merchantSignUp"><a href="merchant/register" class="btn primary">Merchant Sign up </a></div>
+        </div>
+    </div>
+
+
 {/body}

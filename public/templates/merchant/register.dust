@@ -101,9 +101,11 @@
              <div class="required">All fields are required. Please enter all the information.</div>
         </div>
         <div class="section">
-            <div class="label"></div>
-            <div class = "detail">
+            <div class="label">
                 <a href="#" id="submit" class="btn primary continue">Submit</a>
+            </div>
+            <div class = "detail">
+                <a href="{contextPath}" id="cancel" class="btn secondary continue">Cancel</a>
             </div>
         </div>
     </div>
