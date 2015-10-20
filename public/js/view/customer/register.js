@@ -23,7 +23,9 @@ define([
             'focusout #firstName': 'validateErrorField',
             'focusout #lastName': 'validateErrorField',
             'focusout #email': 'validateErrorField',
-            'focusout #address': 'validateErrorField',
+            'focusout #street': 'validateErrorField',
+            'focusout #city': 'validateErrorField',
+            'focusout #zipcode': 'validateErrorField',
             'focusout #phone': 'validateErrorField',
             'focusout #ccNo': 'validateErrorField',
             'focusout #cvv': 'validateErrorField',
@@ -50,7 +52,10 @@ define([
                 firstName: this.$('#firstName').val(),
                 lastName: this.$('#lastName').val(),
                 email: this.$('#email').val(),
-                address: this.$('#address').val(),
+                street: this.$('#street').val(),
+                city: this.$('#city').val(),
+                state: this.$('#state').val(),
+                zipcode: this.$('#zipcode').val(),
                 phone: this.$('#phone').val(),
                 ccNo: this.$('#ccNo').val(),
                 ccExpMonth: this.$('#ccExpMonth').val(),
@@ -109,10 +114,7 @@ define([
         },
 
         serialize: function () {
-            alert('inside serialize');
-
             return customerModel.toJSON();
-
         }
 
     });

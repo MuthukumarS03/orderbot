@@ -35,7 +35,17 @@
         <div class="section">
             <div class="label"> Address </div>
             <div class = "detail">
-                <input id="address" class="textInput" type="text" placeholder="Address"/>
+                <input id="street" class="textInput" type="text" placeholder="Street Name and Apt"/>
+                <input id="city" class="textInput addressField" type="text" placeholder="City"/>
+                <div>
+                <select id="state" class="selectDropdown addressField">
+                    {#data.states}
+                        <option value="{.}">{.}</option>
+                    {/data.states}
+                </select>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <input id="zipcode" class="textInput addressField" type="text" placeholder="Zip Code" maxlength="5"/>
+                </div>
             </div>
         </div>
         <div class="section">
@@ -52,30 +62,17 @@
         </div>
         <div class="section">
             <div class="label"> Expiration </div>
-
             <div class="detail">
                 <select id="ccExpMonth" class="selectDropdown">
-                    <option value="1">01</option>
-                    <option value="2">02</option>
-                    <option value="3">03</option>
-                    <option value="4">04</option>
-                    <option value="5">05</option>
-                    <option value="6">06</option>
-                    <option value="7">07</option>
-                    <option value="8">08</option>
-                    <option value="9">09</option>
-                    <option value="10">10</option>
-                    <option value="11">11</option>
-                    <option value="12">12</option>
+                    {#data.expMonths}
+                        <option value="{month}">{name}</option>
+                    {/data.expMonths}
                 </select>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <select id="ccExpYear" class="selectDropdown">
-                    <option value="2015">2015</option>
-                    <option value="2016">2016</option>
-                    <option value="2017">2017</option>
-                    <option value="2018">2018</option>
-                    <option value="2019">2019</option>
-                    <option value="2020">2020</option>
+                    {#data.expYears}
+                        <option value="{.}">{.}</option>
+                    {/data.expYears}
                 </select>
             </div>
         </div>
@@ -103,9 +100,9 @@
             <div class = "detail">
                 <select id="itemId" class="selectDropdown">
                     <option value="">Select Item</option>
-                    {#items}
+                    {#data.items}
                         <option value="{item_id}">{item_name}</option>
-                    {/items}
+                    {/data.items}
                 </select>
             </div>
         </div>

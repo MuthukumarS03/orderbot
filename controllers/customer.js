@@ -10,13 +10,13 @@ var _ = require('underscore'),
 module.exports = {
 
     handleView: function (req, res, next) {
-
-
         var model = {
-            viewName: 'customer/register',
-            items: customerModel.getItems()
+            viewName: 'customer/register'
         };
         _.extend(req.model, model);
+
+        // Load Data required for registration.
+        customerModel.loadData(req);
 
         next();
     },

@@ -20,7 +20,17 @@ define([
                 pattern: 'email',
                 required: true
             },
-            address: {
+            street: {
+                required: true
+            },
+            city: {
+                required: true
+            },
+            state: {
+                required: true
+            },
+            zipcode: {
+                pattern: 'digits',
                 required: true
             },
             phone: {
@@ -32,6 +42,7 @@ define([
                 required: true
             },
             cvv: {
+                pattern: 'digits',
                 required: true
             },
             nameOnCard: {
