@@ -36,7 +36,14 @@ define([
             },
             nameOnCard: {
                 required: true
+            },
+            deviceMac: {
+                required: true
+            },
+            itemId: {
+                required: true
             }
+
         },
 
         url: function() {

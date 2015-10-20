@@ -27,7 +27,9 @@ define([
             'focusout #phone': 'validateErrorField',
             'focusout #ccNo': 'validateErrorField',
             'focusout #cvv': 'validateErrorField',
-            'focusout #nameOnCard': 'validateErrorField'
+            'focusout #nameOnCard': 'validateErrorField',
+            'focusout #deviceMac': 'validateErrorField',
+            'focusout #itemId': 'validateErrorField'
 
         },
 
@@ -54,7 +56,9 @@ define([
                 ccExpMonth: this.$('#ccExpMonth').val(),
                 ccExpYear: this.$('#ccExpYear').val(),
                 cvv: this.$('#cvv').val(),
-                nameOnCard: this.$('#nameOnCard').val()
+                nameOnCard: this.$('#nameOnCard').val(),
+                deviceMac: this.$('#deviceMac').val(),
+                itemId: this.$('#itemId').val()
             });
         },
 

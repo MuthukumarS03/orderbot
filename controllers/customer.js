@@ -4,13 +4,17 @@
 
 'use strict';
 
-var _ = require('underscore');
+var _ = require('underscore'),
+    customerModel = require('../models/customer-model');
 
 module.exports = {
 
     handleView: function (req, res, next) {
+
+
         var model = {
-            viewName: 'customer/register'
+            viewName: 'customer/register',
+            items: customerModel.getItems()
         };
         _.extend(req.model, model);
 

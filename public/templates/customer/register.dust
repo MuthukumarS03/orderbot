@@ -91,6 +91,25 @@
                 <input id="nameOnCard" class="textInput" type="text" placeholder="Name on Credit Card"/>
             </div>
         </div>
+
+        <div class="section">
+            <div class="label"> Add device MAC </div>
+            <div class = "detail">
+                <input id="deviceMac" class="textInput" type="text" placeholder="Device MAC Id"/>
+            </div>
+        </div>
+        <div class="section">
+            <div class="label"> Add device Item </div>
+            <div class = "detail">
+                <select id="itemId" class="selectDropdown">
+                    <option value="">Select Item</option>
+                    {#items}
+                        <option value="{item_id}">{item_name}</option>
+                    {/items}
+                </select>
+            </div>
+        </div>
+
         <div class="section">
              <div class="required">All fields are required. Please enter all the information.</div>
         </div>
@@ -99,7 +118,6 @@
             <div class = "detail">
                 <a href="#" id="submit" class="btn primary continue">Submit</a>
             </div>
-
         </div>
     </div>
 {/body}
