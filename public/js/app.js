@@ -11,6 +11,13 @@ require(['config'], function (config) {
         'lib/auto-submit'
     ], function ($, Router) {
 
+        var csrf = $('body').data('token');
+
+        // Adding CSRF token for all AJAX calls
+        $.ajaxPrefilter(function(opts, origOpts, jqXHR) {
+            jqXHR.setRequestHeader('X-CSRF-Token', csrf);
+        });
+
         var router = new Router();
 
     });

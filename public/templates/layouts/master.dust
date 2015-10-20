@@ -8,7 +8,7 @@
         {+link /}
     
     </head>
-    <body>
+    <body data-token="{_csrf}" {?fsoToken}data-fso-token="{fsoToken}"{/fsoToken}{~s}>
 
         {>"layouts/header" /}
 
