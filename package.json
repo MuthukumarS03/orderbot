@@ -23,6 +23,7 @@
     "express": "^4.12.2",
     "kraken-js": "^1.0.3",
     "localizr": "^0.1.6",
+    "lusca": "^1.0.0",
     "requirejs": "^2.1.20",
     "underscore": "~1.7.0"
   },
