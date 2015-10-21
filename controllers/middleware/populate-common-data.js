@@ -3,6 +3,7 @@
  */
 'use strict';
 
+var middlewareUtils = require('./middleware-utils');
 module.exports = function () {
 
     return function (req, res, next) {
@@ -16,6 +17,7 @@ module.exports = function () {
         //populate template base path
         req.model.templateBasePath = req.app.kraken.get('requestURI') + '/templates/US/en/%s.js';
 
-        next();
+        //Generate Braintree clientToken and save it in req.model
+        middlewareUtils.generateBTClientToken(req, next);
     };
 };

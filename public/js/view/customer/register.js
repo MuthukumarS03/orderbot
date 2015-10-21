@@ -8,15 +8,14 @@ define([
     'jquery',
     'underscore',
     'BaseView',
+    'braintree',
     'model/customer',
     'backboneValidation'
-], function($, _, BaseView, customerModel) {
+], function($, _, BaseView, Braintree, customerModel) {
 
     var RegisterView = BaseView.extend({
 
         el: '#register',
-
-        model: customerModel,
 
         events: {
             'click #submit': 'submit',
@@ -36,6 +35,8 @@ define([
         },
 
         initialize: function () {
+            this.clientToken = this.$el.data('clientToken');
+            this.model= customerModel;
 
         },
 
@@ -45,6 +46,16 @@ define([
                 currentTarget.removeClass('hasError');
             }
 
+        },
+
+        getPaymentMethodNonce: function (callback) {
+            var client = new Braintree.api.Client({clientToken: this.clientToken});
+            client.tokenizeCard({
+                number: this.model.get('ccNo'),
+                expirationDate: this.model.get('ccExpMonth') +  '/' + this.model.get('ccExpYear').substring(this.model.get('ccExpYear').length-2)
+            }, function (err, nonce) {
+                callback(nonce);
+            });
         },
 
         loadModel: function () {
@@ -99,10 +110,13 @@ define([
             this.listenToOnce(this.model, 'error', this.onSubmitError);
             this.listenToOnce(this.model, 'sync', this.onSubmitSuccess);
 
-            // On successful validation submit the form values.
-            this.model.save();
-            console.log('model.save called..!!!! ');
+            this.getPaymentMethodNonce(function (nonce) {
+                this.model.set('paymentMethodNonce',nonce);
 
+                // On successful validation submit the form values.
+                this.model.save();
+                console.log('model.save called..!!!! ');
+            }.bind(this));
         },
 
         afterRoute: function () {

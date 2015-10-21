@@ -11,6 +11,8 @@
   },
   "dependencies": {
     "adaro": "^0.1.10",
+    "async": "~0.9",
+    "braintree": "^1.29.0",
     "construx": "^1.0.0",
     "construx-copier": "^1.0.0",
     "construx-dustjs-i18n": "^1.0.1",

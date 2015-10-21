@@ -17,7 +17,8 @@ requirejs.config({
         'bootstrap-modal': 'lib/bootstrap3/modal',
         'backboneSyphon' : 'lib/backbone.syphon-0.4.1',
         'backboneValidation' : 'lib/backbone-validation-amd',
-        'lap': 'lib/lap'
+        'lap': 'lib/lap',
+        'braintree': 'lib/braintree-client'
     },
     useStrict: true,
     shim: {
