@@ -61,6 +61,8 @@ module.exports = {
 
     initiateOrder : function (req, res, next) {
 
+        console.log('MacID : ' + req.body.mac_id);
+
        getCustomerItemByMacId(req.body.mac_id, function (err, customerItem) {
 
            console.log('customerItem : ' + JSON.stringify(customerItem));
